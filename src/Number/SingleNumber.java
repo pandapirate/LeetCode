@@ -1,4 +1,4 @@
-package Other;
+package Number;
 
 /**
  * Created by khuang on 8/26/14.
