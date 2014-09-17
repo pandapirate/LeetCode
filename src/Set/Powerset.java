@@ -1,5 +1,7 @@
 package Set;
 
+import Other.IntegerToRoman;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,23 +9,14 @@ import java.util.Set;
  * Created by Kevin on 9/3/14
  */
 public class Powerset {
-
     public Set<Set<Integer>> recursive(Set<Integer> base) {
-        if (base.size() == 0) {
-            Set<Set<Integer>> r = new HashSet<>();
-            r.add(new HashSet<Integer>());
-            return r;
-        }
+        Set<Set<Integer>> result = new HashSet<>();
+        result.add(base);
 
-        int a = base.iterator().next();
-        base.remove(a);
-        Set<Set<Integer>> result = recursive(base);
-
-        Set<Set<Integer>> addOn = new HashSet<>(result);
-        for (Set<Integer> set : addOn) {
-            Set<Integer> newItem = new HashSet<>(set);
-            newItem.add(a);
-            result.add(newItem);
+        for (Integer x : base) {
+            Set<Integer> newBase = new HashSet<>(base);
+            newBase.remove(x);
+            result.addAll(recursive(newBase));
         }
 
         return result;
