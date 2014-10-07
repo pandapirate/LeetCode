@@ -22,6 +22,27 @@ public class Powerset {
         return result;
     }
 
+    public Set<Set<Integer>> recursive2(Set<Integer> set) {
+        Set<Set<Integer>> ss = new HashSet<>();
+        if (set.size() == 0) {
+            ss.add(set);
+            return ss;
+        }
+
+        int elem = set.iterator().next();
+        set.remove(elem);
+        Set<Set<Integer>> result = recursive2(set);
+        for (Set<Integer> s : result) {
+            Set<Integer> newSet = new HashSet<>(s);
+            newSet.add(elem);
+            ss.add(newSet);
+        }
+
+        ss.addAll(result);
+
+        return ss;
+    }
+
     public Set<Set<Integer>> iterative(Set<Integer> base) {
         Set<Set<Integer>> collection = new HashSet<>();
         collection.add(new HashSet<Integer>());
@@ -46,12 +67,12 @@ public class Powerset {
         set.add(2);
         set.add(3);
 
-        System.out.println(new Powerset().recursive(set));
+        System.out.println(new Powerset().recursive2(set));
 
-        set = new HashSet<>();
-        set.add(1);
-        set.add(2);
-        set.add(3);
-        System.out.println(new Powerset().iterative(set));
+//        set = new HashSet<>();
+//        set.add(1);
+//        set.add(2);
+//        set.add(3);
+//        System.out.println(new Powerset().iterative(set));
     }
 }
