@@ -1,4 +1,4 @@
-package Other;
+package CustomDataStructure;
 
 import java.util.HashMap;
 
