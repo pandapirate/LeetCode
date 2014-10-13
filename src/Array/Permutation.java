@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by Kevin on 10/6/2014
  */
-public class Permutation2 {
+public class Permutation {
     /*
         Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 
@@ -72,6 +72,6 @@ public class Permutation2 {
 
     public static void main(String args[]) {
         int[] list = new int[]{3,3,0,0,2,3,2};
-        System.out.println(new Permutation2().permuteUnique(list));
+        System.out.println(new Permutation().permuteUnique(list));
     }
 }
