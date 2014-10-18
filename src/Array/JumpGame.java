@@ -19,7 +19,7 @@ public class JumpGame {
     }
 
     public boolean jump(int[] A, int index) {
-        
+        return true;
     }
 
     public static void main(String[] args) {
