@@ -1,0 +1,39 @@
+The traveling salespeople problem involves two salespeople who wish to have
+lunch. Being frugal, they wish to minimize the round-trip driving mileage of their
+lunch by arranging to meet when their schedules bring them close to each other.
+
+Given a map and the routes of the two salespeople, identify the city and day they
+should meet. Each route will be sorted by day. A salesperson may be unavailable
+on some days. The salespeople would like to travel the minimum total round-trip
+distance to meet for lunch. This might mean that:
+
+  * Both salespeople happen to be in the same city (the best case, a driving
+    mileage of zero).
+
+  * They are in neighboring cities (in which case only one needs to travel).
+
+  * They are in two cities that share a common neighbor (in which case both can
+    travel to the common neighbor).
+
+The class CityMap can supply the mileage between two cities. CityMap can also
+supply for a given city, a Set of all its neighboring cities.
+
+In the event of a tie they should meet on the earliest day. If there are two
+equivalent city options on the same day, either can be selected. The salespeople
+are not willing to drive farther than an immediate neighbor city for this lunch
+appointment. Return null to indicate that no solution can be found.
+
+Implement your solution in the class Solver, in the method:
+
+    Solution findBestSolution(Salesperson salesperson1,
+                              Salesperson salesperson2,
+                              CityMap cityMap)
+
+There are 3 simple tests in SolverTest that you should try to pass first. Make
+any changes you like to the classes under the "src" directory, you can view but
+don't modify "test" classes. Don't worry about the performance of your code. If
+time remains, there are additional tests in the class AdvancedSolverTest.
+
+See "Example Routes.jpg" for a graphical depiction of these requirements on a
+simplified map. The actual map used in the tests is "California Driving
+Distances.jpg".
